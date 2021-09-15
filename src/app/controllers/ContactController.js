@@ -24,7 +24,7 @@ class ContactController {
   async store(req, res) {
     // Criar novo registro
     const {
-      name, email, phone,
+      name, email, phone, category_id,
     } = req.body;
 
     if (!name) {
@@ -38,7 +38,7 @@ class ContactController {
     }
 
     const contact = await ContactsRepository.create({
-      name, email, phone,
+      name, email, phone, category_id,
     });
 
     res.json(contact);
