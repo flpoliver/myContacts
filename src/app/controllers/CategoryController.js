@@ -6,6 +6,10 @@ class CategoryController {
 
     const categories = await CategoryRepository.findAll(orderBy);
 
+    if (!categories) {
+      return res.sendStatus(500);
+    }
+
     return res.json(categories);
   }
 
