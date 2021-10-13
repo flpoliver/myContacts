@@ -7,6 +7,7 @@ class ContactController {
 
     const contacts = await ContactsRepository.findAll(orderBy);
 
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.json(contacts);
   }
 
